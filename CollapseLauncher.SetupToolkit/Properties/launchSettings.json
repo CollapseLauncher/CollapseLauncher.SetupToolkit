@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "CollapseLauncher.Setup": {
+    "CollapseLauncher.SetupToolkit": {
       "commandName": "Project",
       "commandLineArgs": "\"E:\\myGit\\CollapseLauncher-ReleaseRepo\" Stable false"
     }
