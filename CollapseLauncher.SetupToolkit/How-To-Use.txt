@@ -1,0 +1,28 @@
+A. Compiling
+# Install WiX Toolset
+dotnet tool install --global wix
+
+# Clean the project
+dotnet clean --configuration Release
+
+# Restore NuGet packages
+dotnet restore
+
+# Publish & Start compile the app. The output will be generated to "Build" folder
+dotnet publish /p:PublishProfile=FolderProfile
+
+
+===================================================================================
+
+B. Run & Generate the MSI installer
+# Install WiX Toolset
+dotnet tool install --global wix
+
+# Go to the build folder
+cd Build
+
+# Run and generate the MSI installer
+CollapseLauncher.Setup.exe "E:\MyGit\CollapseLauncher-ReleaseRepo" false
+
+# Or if only generate the WSX file
+CollapseLauncher.Setup.exe "E:\MyGit\CollapseLauncher-ReleaseRepo" true

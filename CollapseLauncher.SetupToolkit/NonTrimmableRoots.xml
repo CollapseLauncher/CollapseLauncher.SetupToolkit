@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<linker>
+	<!-- Protect built-in libs COM from trimming -->
+	<assembly fullname="System.Private.CoreLib">
+		<namespace fullname="System.Reflection" preserve="all" />
+	</assembly>
+</linker>

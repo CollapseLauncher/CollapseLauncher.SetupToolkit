@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Platforms>x64</Platforms>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="*.psd" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="WixSharp.Core" Version="2.1.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="How-To-Use.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="WizardBannerDesign.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="WizardBannerDesignSmall.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
+		<ItemGroup>
+			<!-- Descriptor for all classes that cannot be trimmed -->
+			<TrimmerRootDescriptor Include="NonTrimmableRoots.xml" />
+		</ItemGroup>
+	</Target>
+
+</Project>
