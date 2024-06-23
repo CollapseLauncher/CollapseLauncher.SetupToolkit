@@ -48,7 +48,6 @@ namespace ColapseLauncher.Setup
                 CopyToDir(sourceBinaryDir, targetBinaryTempDir);
                 CopyTo(Path.Combine(sourceBinaryDir, "icon.ico"), Path.Combine(targetDir, "icon.ico"));
                 CopyTo(Path.Combine(sourceDir, "CollapseLauncher.exe"), Path.Combine(targetDir, "CollapseLauncher.exe"));
-                CopyTo(Path.Combine(sourceDir, "ApplyUpdate.exe"), Path.Combine(targetDir, "ApplyUpdate.exe"));
                 CopyTo(Path.Combine(sourceDir, "Update.exe"), Path.Combine(targetDir, "Update.exe"));
 
                 string installPath = @"%ProgramFiles%\Collapse Launcher";
@@ -59,7 +58,6 @@ namespace ColapseLauncher.Setup
                             GetDirEntity(targetBinaryTempDir),
                             GetFileEntity(Path.Combine(targetDir, "icon.ico")),
                             GetFileEntity(Path.Combine(targetDir, "CollapseLauncher.exe")),
-                            GetFileEntity(Path.Combine(targetDir, "ApplyUpdate.exe")),
                             GetFileEntity(Path.Combine(targetDir, "Update.exe")),
                             new Dir($"%ProgramMenu%\\Collapse Launcher",
                                 new ExeFileShortcut
@@ -74,12 +72,6 @@ namespace ColapseLauncher.Setup
                                     Target = "[INSTALLDIR]CollapseLauncher.exe",
                                     Arguments = "",
                                     AttributesDefinition = "Directory=DesktopFolder"
-                                },
-                                new ExeFileShortcut
-                                {
-                                    Name = "Run Force Updater",
-                                    Target = "[INSTALLDIR]ApplyUpdate.exe",
-                                    Arguments = ""
                                 },
                                 new ExeFileShortcut
                                 {
